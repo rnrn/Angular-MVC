@@ -1,24 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
-import { AppComponent } from './app.component';
-import { TableModule } from './table.module/table.module';
+
 import { NgxsModule } from '@ngxs/store';
+import { TableModule } from './table.module/table.module';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
-  imports:      [ 
-      BrowserModule,
-      FormsModule,
-      HttpClientModule,
-      AgGridModule.withComponents([]),
-      NgxsModule.forRoot([], {
-        developmentMode: true
-      }),
-      TableModule
-    ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AgGridModule.withComponents([]),
+    AppRoutingModule,
+    TableModule,
+    NgxsModule.forRoot([], {
+      developmentMode: !environment.production
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

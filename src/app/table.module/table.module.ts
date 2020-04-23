@@ -7,6 +7,7 @@ import { ModelService } from './services/model.service';
 import { GridViewComponent } from './components/grid-view/grid-view.component';
 import { GridDataComponent } from './containers/grid-data/grid-data.component';
 import { ControllerService } from './services/controller.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ControllerService } from './services/controller.service';
     GridDataComponent
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     AgGridModule.withComponents([]),
     NgxsModule.forFeature([

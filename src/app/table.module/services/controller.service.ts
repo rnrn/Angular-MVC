@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, interval, merge } from 'rxjs';
-import { Select, Store } from '@ngxs/store';
-import { tap, filter } from 'rxjs/operators';
+import { Store } from '@ngxs/store';
 import { TableUpdateAction } from '../actions/table-update.action';
 
 @Injectable()

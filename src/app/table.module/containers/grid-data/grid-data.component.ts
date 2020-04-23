@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { ModelService } from '../../services/model.service';
 import { ControllerService } from '../../services/controller.service';
 import { Observable } from 'rxjs';
@@ -16,9 +15,8 @@ export class GridDataComponent {
   constructor(
     public modelService: ModelService,
     private controllerService: ControllerService ) {
-    
-    this.data$ = this.modelService.data$;
 
+    this.data$ = this.modelService.data$;
   }
 
   onUpdate() {

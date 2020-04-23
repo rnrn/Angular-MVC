@@ -9,3 +9,11 @@ Redux things implemented in ['state'](https://stackblitz.com/edit/ng-mvc?file=sr
 All parts combined into [TableModule](https://stackblitz.com/edit/ng-mvc?file=src%2Fapp%2Ftable.module%2Ftable.module.ts) and included into [main module](https://stackblitz.com/edit/ng-mvc?file=src%2Fapp%2Fapp.module.ts).
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/ng-mvc)
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.

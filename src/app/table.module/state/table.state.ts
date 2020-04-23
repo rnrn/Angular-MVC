@@ -1,9 +1,10 @@
-import { Action, State, StateContext, Store } from '@ngxs/store';
-import { HttpClient } from '@angular/common/http';
-import { switchMap, map, finalize, tap } from 'rxjs/operators';
+import { Action, State, StateContext } from '@ngxs/store';
 import { patch } from '@ngxs/store/operators';
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 import { TableUpdateAction } from '../actions/table-update.action';
-import { Log } from '@angular/core/testing/src/logger';
 
 @State<TableStateModel>({
   name: 'tableState',
@@ -11,11 +12,11 @@ import { Log } from '@angular/core/testing/src/logger';
     data: undefined
   }
 })
+@Injectable()
 export class TableState {
 
-  constructor(
-    private store: Store,
-    private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   @Action(TableUpdateAction)
   updateAction(ctx: StateContext<TableStateModel>) {

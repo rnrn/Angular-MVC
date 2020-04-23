@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'pr-grid-view',
@@ -12,12 +11,12 @@ export class GridViewComponent {
   @Output()
   updated = new EventEmitter();
 
-  private columnDefs;
-  private defaultColDef;
-  
+  columnDefs: any;
+  defaultColDef: any;
+
   constructor() {
 
-      this.columnDefs = [
+    this.columnDefs = [
       {
         headerName: 'Athlete Details',
         children: [
