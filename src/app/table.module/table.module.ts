@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgGridModule } from 'ag-grid-angular';
 import { NgxsModule } from '@ngxs/store';
+
 import { TableState } from './state/table.state';
 import { ModelService } from './services/model.service';
-import { GridViewComponent } from './components/grid-view/grid-view.component';
-import { GridDataComponent } from './containers/grid-data/grid-data.component';
 import { ControllerService } from './services/controller.service';
-import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './services/data.service';
+
+import { GridDataComponent } from './containers/grid-data/grid-data.component';
+import { GridViewComponent } from './components/grid-view/grid-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     GridDataComponent
   ],
   imports: [
-    HttpClientModule,
     CommonModule,
     AgGridModule.withComponents([]),
     NgxsModule.forFeature([
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     ModelService,
-    ControllerService
+    ControllerService,
+    DataService
   ]
 })
 export class TableModule { }

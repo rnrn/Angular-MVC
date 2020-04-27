@@ -1,10 +1,9 @@
+import { Injectable } from '@angular/core';
 import { Action, State, StateContext } from '@ngxs/store';
 import { patch } from '@ngxs/store/operators';
-
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { TableUpdateAction } from '../actions/table-update.action';
+import { DataService } from '../services/data.service';
 
 @State<TableStateModel>({
   name: 'tableState',
@@ -15,20 +14,17 @@ import { TableUpdateAction } from '../actions/table-update.action';
 @Injectable()
 export class TableState {
 
-  constructor(private http: HttpClient) {
+  constructor(private dataService: DataService) {
   }
 
   @Action(TableUpdateAction)
   updateAction(ctx: StateContext<TableStateModel>) {
     console.log('==> updateAction begin');
     ctx.setState(patch({ data: [] }));
-    return this.http
-      .get(
-        'https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/olympicWinnersSmall.json'
-      )
+    return this.dataService.get()
       .pipe(map(data => {
-        console.log('==> updateAction end');
         ctx.setState(patch({ data }));
+        console.log('==> updateAction end');
       }));
   }
 }
