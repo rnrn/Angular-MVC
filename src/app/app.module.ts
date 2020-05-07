@@ -9,10 +9,12 @@ import { TableModule } from './table.module/table.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
