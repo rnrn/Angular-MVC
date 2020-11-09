@@ -10,17 +10,23 @@ import { DataService } from './services/data.service';
 
 import { GridDataComponent } from './containers/grid-data/grid-data.component';
 import { GridViewComponent } from './components/grid-view/grid-view.component';
+import { FilterAthleteComponent } from './components/filter-athlete/filter-athlete.component';
+import { Ng2CompleterModule } from "ng2-completer";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     GridDataComponent,
-    GridViewComponent
+    GridViewComponent,
+    FilterAthleteComponent
   ],
   exports: [
     GridDataComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    Ng2CompleterModule,
     AgGridModule.withComponents([]),
     NgxsModule.forFeature([
       TableState

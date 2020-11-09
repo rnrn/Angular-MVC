@@ -22,4 +22,5 @@ export class GridDataComponent {
   onUpdate() {
     this.controllerService.update();
   }
+
 }

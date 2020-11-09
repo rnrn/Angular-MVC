@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { DescriptionComponent } from './description/description.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { DescriptionComponent } from './description/description.component';
     AgGridModule.withComponents([]),
     AppRoutingModule,
     TableModule,
+       
     NgxsModule.forRoot([], {
       developmentMode: !environment.production
     })
