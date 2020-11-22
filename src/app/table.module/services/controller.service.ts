@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngxs/store';
 import { TableUpdateAction } from '../actions/table-update.action';
+import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 
 @Injectable()
 export class ControllerService {
 
-  constructor(
-    private store: Store) { }
+  constructor() { }
 
+  @Dispatch() 
   update() {
     console.log('==> send TableUpdateAction');
-    this.store.dispatch(new TableUpdateAction());
-  }
+    return new TableUpdateAction()  }
 }

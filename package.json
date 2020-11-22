@@ -11,9 +11,6 @@
   },
   "private": true,
   "dependencies": {
-    "@ngxs/store": "^3.6.0",
-    "ag-grid-angular": "^23.0.3",
-    "ag-grid-community": "^23.0.2",
     "@angular/animations": "~9.1.0",
     "@angular/common": "~9.1.0",
     "@angular/compiler": "~9.1.0",
@@ -22,6 +19,10 @@
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
+    "@ngxs-labs/dispatch-decorator": "^2.1.0",
+    "@ngxs/store": "^3.6.0",
+    "ag-grid-angular": "^23.0.3",
+    "ag-grid-community": "^23.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

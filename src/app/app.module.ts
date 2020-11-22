@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
+import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
 
 import { NgxsModule } from '@ngxs/store';
 import { TableModule } from './table.module/table.module';
@@ -24,7 +25,8 @@ import { DescriptionComponent } from './description/description.component';
     TableModule,
     NgxsModule.forRoot([], {
       developmentMode: !environment.production
-    })
+    }),
+    NgxsDispatchPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
